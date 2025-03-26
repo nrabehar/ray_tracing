@@ -15,11 +15,6 @@ t_vec	vec_zero(void)
 	return (vec3(0, 0, 0));
 }
 
-t_vec	vec_cp(t_vec v)
-{
-	return (vec3(v.x, v.y, v.z));
-}
-
 t_vec	vec_norm(t_vec v)
 {
 	double	mag;

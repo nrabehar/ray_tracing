@@ -10,7 +10,6 @@ typedef struct s_vec
 
 t_vec		vec3(double x, double y, double z);
 t_vec		vec_zero(void);
-t_vec		vec_cp(t_vec v);
 t_vec		vec_norm(t_vec v);
 t_vec		vec_cross(t_vec v1, t_vec v2);
 

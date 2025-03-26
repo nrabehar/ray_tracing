@@ -3,7 +3,6 @@
 
 # define EPSILON 0.00001
 
-# include "matrice.h"
 # include "point.h"
 # include "range.h"
 # include "vector.h"
