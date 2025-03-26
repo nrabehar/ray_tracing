@@ -2,8 +2,8 @@
 
 int	main(void)
 {
-	printf("Hello miniRT\n");
-	t_vec v = vec3(1, 2, 3);
-	vec_print(v);
+	init_scene(400, 400, "miniRT");
+	init_render();
+	render_scene();
 	return (0);
 }

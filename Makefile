@@ -20,6 +20,7 @@ S_MTH = \
 	$(D_MTH)/vector/vec_op.c \
 	$(D_MTH)/vector/vec_debug.c \
 	$(D_MTH)/point/point.c \
+	$(D_MTH)/range/range.c \
 
 D_WIN = $(S_DIR)/win
 S_WIN = \
@@ -28,10 +29,21 @@ S_WIN = \
 	$(D_WIN)/win_img.c \
 	$(D_WIN)/win_pixel.c \
 
+D_CLR = $(S_DIR)/color
+S_CLR = \
+	$(D_CLR)/color.c \
+
+D_SCN = $(S_DIR)/scene
+S_SCN = \
+	$(D_SCN)/scene.c \
+	$(D_SCN)/scene_render.c \
+
 SRC = \
 	$(S_DIR)/main.c \
 	$(S_MTH) \
 	$(S_WIN) \
+	$(S_CLR) \
+	$(S_SCN) \
 
 OBJ = $(addprefix $(O_DIR)/, $(SRC:.c=.o))
 
@@ -54,9 +66,9 @@ clean:
 	rm -rf $(O_DIR)
 
 fclean: clean
-	@if [ -d "$(M_DIR)" ]; then \
-		$(MAKE) -C $(M_DIR) clean; \
-	fi
+	# @if [ -d "$(M_DIR)" ]; then \
+	# 	$(MAKE) -C $(M_DIR) clean; \
+	# fi
 	rm -f $(NAME)
 
 re: fclean all
@@ -64,10 +76,10 @@ re: fclean all
 # Test rules
 VFLAGS = --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-run: all clean
+run: all
 	@./$(NAME) $(SCENE_DIR)/$(FILE)
 
-leak: all clean
+leak: all
 	@valgrind $(VFLAGS) ./$(NAME) $(SCENE_DIR)/$(FILE)
 
 .phony: all clean fclean re
