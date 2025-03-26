@@ -5,6 +5,7 @@
 
 # include "matrice.h"
 # include "point.h"
+# include "range.h"
 # include "vector.h"
 # include <math.h>
 # include <stdbool.h>
