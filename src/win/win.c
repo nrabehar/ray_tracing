@@ -53,6 +53,14 @@ int	close_win(void)
 	return (0);
 }
 
+void	clear_win(void)
+{
+	t_win	*win;
+
+	win = get_win();
+	mlx_clear_window(win->mlx, win->ptr);
+}
+
 void	destroy_win(void)
 {
 	t_win *win;

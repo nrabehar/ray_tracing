@@ -76,6 +76,7 @@ int			init_win(int w, int h, char *title);
 int			init_win_img(void);
 
 int			open_win(void);
+void		clear_win(void);
 int			close_win(void);
 
 void		set_px_quality(t_px_quality quality);

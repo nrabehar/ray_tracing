@@ -3,9 +3,8 @@
 static int	win_on_close(void *params)
 {
 	(void)params;
-	destroy_win_img();
-	destroy_win();
-	return (0);
+	destroy_scene();
+	exit(0);
 }
 
 void	handle_win_event(void)
